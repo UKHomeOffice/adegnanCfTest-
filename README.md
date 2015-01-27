@@ -3,7 +3,7 @@ Cloud Foundry Testing
 
 ## Getting started 
 
-Assuming you've already recieved the email with your credntials in it, you'll want to install the cloudfoundry-cli package; This can be found here https://github.com/cloudfoundry/cli.  Following that, as suggested, login and change your password using the following two commands:-
+Assuming you've already recieved the email with your credntials in it, you'll want to install the cloudfoundry-cli package; This can be found here https://github.com/cloudfoundry/cli, there are precompiled binaries if you scroll down slightly.  Following that, as suggested, login and change your password using the following two commands:-
 
 - cf login
 - cf passwd
