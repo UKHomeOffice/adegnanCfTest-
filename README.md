@@ -20,18 +20,17 @@ I don't have permission to do the following commands
 
 ## Questions
 
-Cloudfoundry is a PaaS system; it is unclear that we'd get any access to the infrastructure beyond what the APIs give us access to.  
+CF is a PaaS system; it is unclear that we'd get any access to the infrastructure beyond what the APIs give us access to.  
 
 ### Security
 
-We need to know whether our infrastructure is using shared resources and how this affects our security.
+We need to know whether our infrastructure is using shared resources and how this affects our security.  Follow up questions may be needed depending on these answers.
 
-- What platform is cloudfoundry running on?  
-- Is the cloudfoundry software shared between clients?
-- Is the compute platform shared?
-- Are the underlying virtual machines shared?  
+- What platform is CF running on?  
+- Is the CF software shared between clients?
 - Are the physical nodes shared?
-- How does CF persist data?
+- Are the underlying virtual machines shared?
+- Is the compute platform shared?
 - Are any of the storage platforms shared?
 - Are any network components shared?
 - Where is our entry point to said network?
@@ -39,12 +38,19 @@ We need to know whether our infrastructure is using shared resources and how thi
 - Where do our external SSL connections terminate?
 - Are there any shared resources beyond this point?
 
-We need to ask any questions about the underlying platform.  This is probably something VMware related and is probably similar to the IaaS platform provided by skyscape:
+We need to ask any questions about the underlying platform.  This is probably something VMware related and thus it could be useful to ask the similar questions we'd ask regarding the IaaS platform provided by skyscape:
 
-- Fill this our later
+- What are you running on the underlying platform
+- Is there a dedicated security team working on the platform?
+- What hardware is the platform running on.  Switches, routers, servers, etc?
+- How is the underlying platform components patched?
+- How and what is monitored on the platform?
 
-- We need to ask any cloudfoundry specific questions, particularly on how this pertains to any shared resources which have been disclosed above.
+We need to ask any CF specific questions, particularly on how this pertains to any shared resources which have been disclosed above.
 
+- How are processed isolated?  Is it possible to isolate at VM level?  CGroup?  User?  
+- How does CF persist data?
+- How do the processes get and receive commands?
 
 ### Scalability
 
