@@ -3,7 +3,7 @@ Cloud Foundry Testing
 
 ## Getting started 
 
-Assuming you've already received the email with your credentials in it, you'll want to install the cloudfoundry-cli package; This can be found here https://github.com/cloudfoundry/cli, there are precompiled binaries if you scroll down slightly.  Following that, as suggested, login and change your password using the following two commands:-
+Assuming you've already received the email with your credentials in it, you'll want to install the cloudfoundry-cli package; This can be found here https://github.com/cloudfoundry/cli, there are pre-compiled binaries if you scroll down slightly.  Following that, as suggested, login and change your password using the following two commands:-
 
 - cf login
 - cf passwd
@@ -48,14 +48,18 @@ We need to ask any questions about the underlying platform.  This is probably so
 
 We need to ask any CF specific questions, particularly on how this pertains to any shared resources which have been disclosed above.
 
-- How are processed isolated?  Is it possible to isolate at VM level?  CGroup?  User?  
+- How are processed isolated?  Is it possible to isolate at VM level?  CGroup?  User?  Does it run Linux? 
 - How does CF persist data?
-- How do the processes get and receive commands?
+- How are process created, destroyed, etc?
 
 ### Scalability
+
+It's important to know how CF is scaled in general and in this specific install.  
 
 ### Features
 
 We need to have an outline on what the platform offers and where the manual tasks lie.  Specifically I want to figure out which tasks will require us to log a ticket and wait.
 
-- Research suggests that you have to terminate SSL outwith the platform.  Is this still the case?  If so, how do we setup our own SSLs, where do these terminate, and who else shares the onfrastrcuture 
+- Docs suggests that you have to terminate SSL outwith the platform.  Is this still the case?  If so, how do we setup our own SSLs?
+- How does it handle new versions of an app deploy.  Does it achieve zero-downtime?
+- How do we manage performance?  Does it have a profiler?  
