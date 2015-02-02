@@ -48,13 +48,39 @@ We need to ask any questions about the underlying platform.  This is probably so
 
 We need to ask any CF specific questions, particularly on how this pertains to any shared resources which have been disclosed above.
 
-- How are processed isolated?  Is it possible to isolate at VM level?  CGroup?  User?  Does it run Linux? 
+- What's the process on packaging and patch CF itself?
+- How are processed isolated?  Is it possible to isolate at VM level?  CGroup?  User?
 - How does CF persist data?
 - How are process created, destroyed, etc?
+- How are the router end points protected?  How is the router itself protected?
+- Does NATS communication have any encryption?  Does it need it.
+- Are services bound over SSL or isolated someway?
+- Is the blobstore locked down?
+- Lucid is out of support in April; What's happening here?
+- Are we using the recommended VLAN setup from CF docs?  Unsure how this protects from internal shared-server threats?  
+- If VMs themselves are VLANd, are they shared?  If so, what exactly stops an app from snooping the network?
+- How is the BOSH firewall manifest setup?
+- How to connections between host and containers work? Documentation is vague.  http://docs.cloudfoundry.org/concepts/security.html
+- What kind of SSL is used by BOSH, UAA and the router connections?
+- Is BOSH data encrypted?  CF doesn't do this by default.
+- Who has BOSH access?
+- How does the Cloud Controller lock down access?
+- What stops me from attempting to escaping my container when using a ruby command line app?  
+- Is the jumpbox secure?
+- Are VLANS configured as stated.  Does this drill down to container level?  How are these distrubuted, so only nodes needing access to the VLAN get access, or do all nodes get access to all VLANs?
+- What's stopping promiscious interfaces?
+- Application and Datastores connections are over SSL?
+
 
 ### Scalability
 
-It's important to know how CF is scaled in general and in this specific install.  
+It's important to know how CF is scaled in general and in this specific install. http://docs.cloudfoundry.org/concepts/high-availability.html
+
+- How many AZs are there and in how many datacentres?
+- What will our quotas be?
+- We actually going to get org, space, roles and permission control?
+- How exactly are the service-brokers setup?  Do they support HA?  How do we do this?
+
 
 ### Features
 
